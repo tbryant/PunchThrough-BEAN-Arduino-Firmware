@@ -547,6 +547,16 @@ uint16_t BeanClass::getBatteryVoltage(void)
     Serial.BTSetBeaconParams( uuid, major_id, minor_id );
   }
 
+  int BeanClass::getRadioConfig(BT_RADIOCONFIG_T *config)
+  {
+    return Serial.BTGetConfig(config);
+  }
+
+  void BeanClass::setBrewometerParameters(BT_RADIOCONFIG_T radioConfig, uint16_t uuid, uint16_t majorid, uint16_t minorid )
+  {
+    Serial.BTSetBrewometerParams(radioConfig, uuid, majorid, minorid );
+  }
+
   void BeanClass::setBeaconEnable( bool beaconEnable )
   {
     Serial.BTBeaconModeEnable( beaconEnable );

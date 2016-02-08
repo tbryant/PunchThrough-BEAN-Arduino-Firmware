@@ -1,4 +1,4 @@
-lightblue-bean.name=LightBlue Bean
+lightblue-bean.name=Brewometer Bean
 lightblue-bean.upload.tool=beanupload
 lightblue-bean.upload.protocol=ptdble
 lightblue-bean.upload.maximum_size=32256

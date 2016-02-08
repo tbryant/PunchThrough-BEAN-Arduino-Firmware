@@ -383,6 +383,10 @@ class BeanClass {
    */
   void setBeaconParameters(uint16_t uuid, uint16_t major_id, uint16_t minor_id);
 
+  int getRadioConfig(BT_RADIOCONFIG_T *config);
+
+  void setBrewometerParameters(BT_RADIOCONFIG_T radioConfig, uint16_t uuid, uint16_t majorid, uint16_t minorid );
+
   /**
    *  Enable or disable iBeacon functionality.
    *
