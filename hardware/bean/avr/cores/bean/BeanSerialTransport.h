@@ -58,7 +58,6 @@ protected:
   void BTSetScratchChar(BT_SCRATCH_T *setting, uint8_t length);
   int  BTGetScratchChar(uint8_t scratchNum, ScratchData * scratchData);
   int  BTGetStates(BT_STATES_T * btStates );
-  void BTSetBrewometerParams(BT_RADIOCONFIG_T radioConfig, uint16_t uuid, uint16_t majorid, uint16_t minorid );
   void BTSetBeaconParams(uint16_t uuid, uint16_t majorid, uint16_t minorid );
   void BTBeaconModeEnable( bool beaconEnable );
   void BTConfigUartSleep(UART_SLEEP_MODE_T mode);
@@ -92,6 +91,7 @@ protected:
 public:
 
   int  BTGetConfig(BT_RADIOCONFIG_T *config);
+  void  BTSetConfig(BT_RADIOCONFIG_T config);
 
   // To work on bean, the serial must be initialized
   // at 57600 with standard settings, and cannot be disabled

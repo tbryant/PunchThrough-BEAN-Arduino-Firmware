@@ -507,6 +507,12 @@ int  BeanSerialTransport::BTGetConfig(BT_RADIOCONFIG_T *config){
                         0, (uint8_t *) config, &size);
 };
 
+void BeanSerialTransport::BTSetConfig(BT_RADIOCONFIG_T radioConfig)
+{
+  uint16_t msgId = MSG_ID_BT_SET_CONFIG_NOSAVE;
+  write_message(msgId, (const uint8_t*)&radioConfig, sizeof(BT_RADIOCONFIG_T));
+}
+
 void BeanSerialTransport::BTBeaconModeEnable( bool beaconEnable )
 {
   BT_RADIOCONFIG_T radioConfig;
@@ -522,18 +528,6 @@ void BeanSerialTransport::BTBeaconModeEnable( bool beaconEnable )
       size);
   }
 }
-
-void BeanSerialTransport::BTSetBrewometerParams(BT_RADIOCONFIG_T radioConfig, uint16_t uuid, uint16_t majorid, uint16_t minorid )
-{
-  radioConfig.ibeacon_uuid = uuid;
-  radioConfig.ibeacon_major = majorid;
-  radioConfig.ibeacon_minor = minorid;
-
-  uint16_t msgId = MSG_ID_BT_SET_CONFIG_NOSAVE;
-
-  write_message(msgId, (const uint8_t*)&radioConfig, sizeof(BT_RADIOCONFIG_T));
-}
-
 
 void BeanSerialTransport::BTSetBeaconParams(uint16_t uuid, uint16_t majorid, uint16_t minorid )
 {
