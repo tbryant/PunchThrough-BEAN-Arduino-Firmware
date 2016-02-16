@@ -383,9 +383,9 @@ class BeanClass {
    */
   void setBeaconParameters(uint16_t uuid, uint16_t major_id, uint16_t minor_id);
 
-  int getRadioConfig(BT_RADIOCONFIG_T *config, bool save);
+  int getRadioConfig(BT_RADIOCONFIG_T *config);
 
-  void setRadioConfig(BT_RADIOCONFIG_T config);
+  void setRadioConfig(BT_RADIOCONFIG_T config, bool save);
 
   /**
    *  Enable or disable iBeacon functionality.
