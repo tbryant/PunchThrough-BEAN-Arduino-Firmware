@@ -552,9 +552,9 @@ uint16_t BeanClass::getBatteryVoltage(void)
     return Serial.BTGetConfig(config);
   }
 
-  void BeanClass::setRadioConfig(BT_RADIOCONFIG_T config)
+  void BeanClass::setRadioConfig(BT_RADIOCONFIG_T config, bool save)
   {
-    Serial.BTSetConfig(config);
+    Serial.BTSetConfig(config, save);
   }
 
   void BeanClass::setBeaconEnable( bool beaconEnable )

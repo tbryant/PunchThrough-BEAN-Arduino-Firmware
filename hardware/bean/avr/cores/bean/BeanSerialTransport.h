@@ -91,7 +91,7 @@ protected:
 public:
 
   int  BTGetConfig(BT_RADIOCONFIG_T *config);
-  void  BTSetConfig(BT_RADIOCONFIG_T config);
+  void  BTSetConfig(BT_RADIOCONFIG_T config, bool save);
 
   // To work on bean, the serial must be initialized
   // at 57600 with standard settings, and cannot be disabled

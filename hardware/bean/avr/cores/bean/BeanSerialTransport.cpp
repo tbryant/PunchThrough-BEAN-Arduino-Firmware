@@ -507,9 +507,9 @@ int  BeanSerialTransport::BTGetConfig(BT_RADIOCONFIG_T *config){
                         0, (uint8_t *) config, &size);
 };
 
-void BeanSerialTransport::BTSetConfig(BT_RADIOCONFIG_T radioConfig)
+void BeanSerialTransport::BTSetConfig(BT_RADIOCONFIG_T radioConfig, bool save)
 {
-  uint16_t msgId = MSG_ID_BT_SET_CONFIG_NOSAVE;
+  uint16_t msgId = ( save ? MSG_ID_BT_SET_CONFIG: MSG_ID_BT_SET_CONFIG_NOSAVE );
   write_message(msgId, (const uint8_t*)&radioConfig, sizeof(BT_RADIOCONFIG_T));
 }
 
